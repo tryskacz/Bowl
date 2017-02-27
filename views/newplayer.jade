@@ -1,0 +1,45 @@
+extends layout
+
+block content
+ != messages()
+ label(for='newplayerform').lv-label-form Nový hráč
+ form#newplayerform(method='post', action='/newplayer' class="lv-form")
+
+       .lv-textbox
+        input.lv-input-text(name='name', type='text', required='')
+        span.lv-text-line
+        label Jméno
+       label.rb-title(for='sex') Pohlaví
+       .lv-radiobuttonbox#sex
+           input#male(type='radio', name='sex', value='m', checked='')
+           label(for='male', onclick='', data-content='muž') muž
+           input#female(type='radio', name='sex', value='f')
+           label(for='female', onclick='', data-content='žena') žena
+
+       .chbox
+          label.chblabel(for='chbox1') Člen bowlingového oddílu 
+          .lv-checkbox#chbox1
+            input#member(type='checkbox', value='None', name='member', checked='')
+            label(for='member')    
+       input.lv-btn.nobg.lv-right(type='submit', name='register', value='ULOŽIT')
+       button.lv-btn.nobg.lv-left(onclick="home()") ZRUŠIT
+       
+       
+ script.
+        $('div.lv-textbox').click(function() {
+            $(this).find('input[type="text"]').focus();
+        });
+        $('div.lv-selectbox').click(function() {
+            $(this).find('select').focus();
+        });
+        $('div.lv-textareabox').click(function() {
+            $(this).find('textarea').focus();
+        });
+        $('.lv-checkbox').click(function() {
+            if (!$(this).find('input[type="checkbox"]').attr('checked')) {
+                $(this).find('input[type="checkbox"]').attr('checked', true);
+            } else {
+                $(this).find('input[type="checkbox"]').attr('checked', false);
+            }
+        });
+       

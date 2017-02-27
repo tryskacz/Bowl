@@ -1,0 +1,160 @@
+extends layout
+
+block content
+ #main
+  #sidePanel.sidenav
+       #nav-icon-close(onclick='closeNav()')
+        span
+        span
+        span
+        span
+        span
+        span
+       .boxes
+        form(method='post', action='/')
+         label(for='sortorder').lv-label-form Seřadit
+         .lv-radiobuttonbox#sortorder.no-hover
+          if sortorder == 1
+           input#sort1(type='radio', name='sortorder', checked='', value='1')
+          if sortorder != 1
+           input#sort1(type='radio', name='sortorder', value='1')
+          label(for='sort1', onclick='', data-content='podle jména') podle jména
+          if sortorder == 2
+           input#sort2(type='radio', name='sortorder', checked='',value='2')
+          if sortorder != 2 
+           input#sort2(type='radio', name='sortorder', value='2')
+          label(for='sort2', onclick='', data-content='podle počtu her') podle počtu her
+          if sortorder == 3
+           input#sort3(type='radio', name='sortorder', checked='', value='3')
+          if sortorder != 3
+           input#sort3(type='radio', name='sortorder', value='3')
+          label(for='sort3', onclick='', data-content='podle skóre') podle skóre
+          if sortorder == 4
+           input#sort4(type='radio', name='sortorder', checked='', value='4')
+          if sortorder != 4
+           input#sort4(type='radio', name='sortorder', value='4')
+          label(for='sort4', onclick='', data-content='podle striků') podle striků
+          if sortorder == 5
+           input#sort5(type='radio', name='sortorder', checked='', value='4')
+          if sortorder != 5
+           input#sort5(type='radio', name='sortorder', value='5')
+          label(for='sort5', onclick='', data-content='podle sparů') podle sparů
+         br
+         button.lv-btn.nobg.lv-center NASTAVIT
+  #nav-icon(onclick='openNav()')
+   span
+   span
+   span
+   span
+   span
+   span
+  != messages()
+  #dashboard
+     if Players
+      each player in Players
+       if player.sex == 'f'
+        .lv-panel
+         div(class='lv-inner-panel red' id='#{player.id}' onclick='selectPlayer(this.id)')
+          .lv-panel-title #{player.name}
+          if sortorder == 1
+           .lv-panel-subtitle1 Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 2
+           .lv-panel-subtitle1.sorted Hry: #{player.gamescount}
+           .lv-panel-subtitle2 Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 3
+           .lv-panel-subtitle1.sorted Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 4
+           .lv-panel-subtitle1.sorted Strike (X): #{player.strikes}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 5
+           .lv-panel-subtitle1.sorted Spare (/): #{player.spares}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Nejlepší skóre: #{player.highscore}
+          .lv-panel-image
+          .lv-inner-bargraph
+           .bargraph
+            ul.bars
+             - var i = 0
+             each total in player.games.reverse()
+              - i++ 
+              li(class='bar#{i}', style='height: #{total.graph}px;')
+               .bar-label #{total.total}
+       else  
+        .lv-panel
+         div(class='lv-inner-panel blue' id='#{player.id}' onclick='selectPlayer(this.id)')
+          .lv-panel-title #{player.name}
+          if sortorder == 1
+           .lv-panel-subtitle1 Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 2
+           .lv-panel-subtitle1.sorted Hry: #{player.gamescount}
+           .lv-panel-subtitle2 Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 3
+           .lv-panel-subtitle1.sorted Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 4
+           .lv-panel-subtitle1.sorted Strike (X): #{player.strikes}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Nejlepší skóre: #{player.highscore}
+           .lv-panel-subtitle4 Spare (/): #{player.spares}
+          if sortorder == 5
+           .lv-panel-subtitle1.sorted Spare (/): #{player.spares}
+           .lv-panel-subtitle2 Hry: #{player.gamescount}
+           .lv-panel-subtitle3 Strike (X): #{player.strikes}
+           .lv-panel-subtitle4 Nejlepší skóre: #{player.highscore}
+          .lv-panel-image
+          .lv-inner-bargraph
+           .bargraph
+            ul.bars
+             - var i = 0
+             each total in player.games.reverse()
+              - i++ 
+              li(class='bar#{i}', style='height: #{total.graph}px;')
+               .bar-label #{total.total}
+ script(src='/javascripts/jquery.js')
+ script.
+  $(document).ready(function(){
+  $('#nav-icon').mouseenter(function(){
+  $(this).toggleClass('over');
+  });
+  });
+  $(document).ready(function(){
+  $('#nav-icon').mouseleave(function(){
+  $(this).toggleClass('over');
+  });
+  });
+  $(document).ready(function(){
+  $('#nav-icon-close').mouseenter(function(){
+  $(this).toggleClass('over');
+  });
+  });
+  $(document).ready(function(){
+  $('#nav-icon-close').mouseleave(function(){
+  $(this).toggleClass('over');
+  });
+  });
+ script.
+  function openNewPlayer() {
+  document.getElementById("newplayer-overlay").className = "newplayeroverlay open";
+  }
+  function closeNewPlayer() {
+  document.getElementById("newplayer-overlay").className = "newplayeroverlay";
+  }
+

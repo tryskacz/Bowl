@@ -1,0 +1,413 @@
+.lv-panel {
+    min-width: 258px;
+    float: left;
+    position: relative;
+    padding: 4px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+.lv-inner-panel {
+    height: 120px;
+    overflow: hidden;
+    display: block;
+    min-width: 250px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+    z-index: 9;
+}
+
+.lv-inner-panel:hover {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.7);
+}
+
+.lv-inner-panel.selected {
+    height: 248px;
+
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+}
+
+.lv-inner-panel.blue {
+    background-color: rgba(52, 152, 219, 0.4);
+}
+.lv-inner-panel.blue.selected {
+    background-color: rgba(52, 152, 219, 0.6);
+}
+.lv-inner-panel.red {
+    background: rgba(231, 76, 60, 0.4);
+}
+.lv-inner-panel.red.selected {
+    background: rgba(231, 76, 60, 0.6);
+}
+.lv-inner-panel.green {
+    background-color: rgba(46, 204, 113, 0.4);
+}
+.lv-inner-panel.green.selected {
+    background-color: rgba(46, 204, 113, 0.6);
+}
+
+.lv-inner-bargraph {
+    background-color: rgba(0, 0, 0, 0.1);
+    top:120px;
+    height:128px;
+    position: relative;
+}
+.lv-inner-info {
+    background-color: rgba(255, 255, 255, 0.6);
+    top:128px;
+    height:284px;
+    position: relative;
+}
+/*-----------------------*/
+.lv-panel-title {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    top: 10px;
+    left: 16px;
+    transition: 0.2s ease-in-out all;
+    -webkit-transition: 0.2s ease-in-out all;
+    -moz-transition: 0.2s ease-in-out all;
+    -ms-transition: 0.2s ease-in-out all;
+    -o-transition: 0.2s ease-in-out all;     
+}
+.lv-panel-subtitle1 {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    font-weight: normal;
+    top: 40px;
+    left: 16px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.2s ease-in-out all;
+    -moz-transition: 0.2s ease-in-out all;
+    -ms-transition: 0.2s ease-in-out all;
+    -o-transition: 0.2s ease-in-out all;     
+}
+.lv-panel-subtitle2 {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: lighter;
+    top: 58px;
+    left: 16px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.2s ease-in-out all;
+    -moz-transition: 0.2s ease-in-out all;
+    -ms-transition: 0.2s ease-in-out all;
+    -o-transition: 0.2s ease-in-out all;     
+}
+.lv-panel-subtitle3 {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: lighter;
+    top: 76px;
+    left: 16px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.2s ease-in-out all;
+    -moz-transition: 0.2s ease-in-out all;
+    -ms-transition: 0.2s ease-in-out all;
+    -o-transition: 0.2s ease-in-out all;     
+}
+.lv-panel-subtitle4 {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: lighter;
+    top: 94px;
+    left: 16px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.2s ease-in-out all;
+    -moz-transition: 0.2s ease-in-out all;
+    -ms-transition: 0.2s ease-in-out all;
+    -o-transition: 0.2s ease-in-out all;     
+}
+.lv-panel-image {
+    position: absolute;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    top: 12px;
+    right: 12px;
+    height: 104px;
+    width: 104px;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.2s ease-in-out all;
+    -moz-transition: 0.2s ease-in-out all;
+    -ms-transition: 0.2s ease-in-out all;
+    -o-transition: 0.2s ease-in-out all;     
+}
+/*---------------------------------------------------*/
+
+.bargraph {
+    top:-90px;
+    height:128px;
+    position: relative;
+}
+
+.bargraph ul.bars {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.bargraph ul.bars li {
+    position: absolute;
+    width: 10px;
+    height: 90px;
+    bottom: -90px;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: lighter;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 10px;
+    z-index: 10;
+     transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;  
+    cursor:pointer;
+}
+
+.bargraph ul.bars li:hover {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -1px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+}
+.bar-label{
+    width:18px;
+    text-align: center;
+    margin-left: -4px;
+    margin-top: -10px;
+    color: #aaa;
+    transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+}
+.bargraph ul.bars li:hover .bar-label  {
+color: white;
+        transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -ms-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+}
+
+
+.bargraph ul.bars li.bar1 {
+    left: 10px;
+    z-index: 11;
+}
+
+.bargraph ul.bars li.bar2 {
+    left: 30px;
+}
+
+.bargraph ul.bars li.bar3 {
+    left: 50px;
+}
+
+.bargraph ul.bars li.bar4 {
+    left: 70px;
+}
+
+.bargraph ul.bars li.bar5 {
+    left: 90px;
+}
+
+.bargraph ul.bars li.bar6 {
+    left: 110px;
+}
+
+.bargraph ul.bars li.bar7 {
+    left: 130px;
+}
+
+.bargraph ul.bars li.bar8 {
+    left: 150px;
+}
+
+.bargraph ul.bars li.bar9 {
+    left: 170px;
+}
+
+.bargraph ul.bars li.bar10 {
+    left: 190px;
+}
+
+.bargraph ul.bars li.bar11 {
+    left: 210px;
+}
+
+.bargraph ul.bars li.bar12 {
+    left: 230px;
+}
+
+.bargraph ul.bars li.bar13 {
+    left: 250px;
+}
+
+.bargraph ul.bars li.bar14 {
+    left: 270px;
+}
+
+.bargraph ul.bars li.bar15 {
+    left: 290px;
+}
+
+.bargraph ul.bars li.bar16 {
+    left: 310px;
+}
+
+.bargraph ul.bars li.bar17 {
+    left: 330px;
+}
+
+.bargraph ul.bars li.bar18 {
+    left: 350px;
+}
+
+.bargraph ul.bars li.bar19 {
+    left: 370px;
+}
+
+.bargraph ul.bars li.bar20 {
+    left: 390px;
+}
+
+.bargraph ul.bars li.bar21 {
+    left: 410px;
+}
+
+.bargraph ul.bars li.bar22 {
+    left: 430px;
+}
+
+.bargraph ul.bars li.bar23 {
+    left: 450px;
+}
+
+.bargraph ul.bars li.bar24 {
+    left: 470px;
+}
+
+.bargraph ul.bars li.bar25 {
+    left: 490px;
+}
+
+.bargraph ul.bars li.bar26 {
+    left: 510px;
+}
+
+.bargraph ul.bars li.bar27 {
+    left: 530px;
+}
+
+.bargraph ul.bars li.bar28 {
+    left: 550px;
+}
+
+.bargraph ul.bars li.bar29 {
+    left: 570px;
+}
+
+.bargraph ul.bars li.bar30 {
+    left: 590px;
+}
+
+.bargraph ul.bars li.bar31 {
+    left: 610px;
+}
+
+.bargraph ul.bars li.bar32 {
+    left: 630px;
+}
+
+.bargraph ul.bars li.bar33 {
+    left: 650px;
+}
+
+.bargraph ul.bars li.bar34 {
+    left: 670px;
+}
+
+.bargraph ul.bars li.bar35 {
+    left: 690px;
+}
+
+
+/* bottom means 100% in background-position */
+
+
+
+/* end of css bar graph */
+
+
+/* Small devices (tablets, 768px and up) */
+
+@media (max-width:668px) {
+    .lv-panel {
+        width: 100%;
+    }   
+    
+}
+
+@media (min-width:668px) {
+    .lv-panel {
+        width: 50%;
+    }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .lv-panel {
+        width: 33.3333%;
+    }
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .lv-panel {
+        width: 25%;
+    }
+}

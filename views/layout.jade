@@ -1,0 +1,22 @@
+doctype html
+html(lang='')
+  head
+    title CGMbowling
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/lv-style.css')
+    link(rel='stylesheet', href='/stylesheets/lv-dashboard.css')
+    link(rel='stylesheet', href='/stylesheets/lv-scorecalc.css')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/my.js')
+  body
+   .lv-header
+    .lv-title-logo(onclick='home()')
+     .lv-title-text Bowling
+    button.lv-btn.blue.lv-title-btn(onclick="newPlayer()") Nový hráč
+    button.lv-btn.green.lv-title-btn2(onclick="newScore()") Zapsat skóre
+   .lv-container
+    block content
+   .lv-footer
+    p © Lamaville 2017
+  

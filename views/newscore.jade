@@ -1,0 +1,103 @@
+extends layout
+
+block content
+ != messages()
+ label(for='newscoreform').lv-label-form Nové skóre
+ form#newscoreform(method='post', action='/newscore', class="lv-form")
+  .selectbox
+   select.lv-select#Player(name='playerId', required)
+    option.lv-option
+    if Players
+     each player in Players
+      option.lv-option(value='#{player.id}') #{player.name}
+     label Hráč
+   label(for="Player") Vyber hráče
+  br
+  .scoreboard
+   table
+    tr
+                 td.throw1#tdthrow1
+                  input#throw1.scoretxt(name='throw1',type='text', value='', readonly='')
+                 td.throw1#tdthrow2
+                  input#throw2.scoretxt(name='throw2',type='text', value='', readonly='')
+                 td.throw1#tdthrow3
+                  input#throw3.scoretxt(name='throw3',type='text', value='', readonly='')
+                 td.throw1#tdthrow4
+                  input#throw4.scoretxt(name='throw4',type='text', value='', readonly='')
+                 td.throw1#tdthrow5
+                  input#throw5.scoretxt(name='throw5',type='text', value='', readonly='')
+                 td.throw1#tdthrow6
+                  input#throw6.scoretxt(name='throw6',type='text', value='', readonly='')
+                 td.throw1#tdthrow7
+                  input#throw7.scoretxt(name='throw7',type='text', value='', readonly='')
+                 td.throw1#tdthrow8
+                  input#throw8.scoretxt(name='throw8',type='text', value='', readonly='')
+                 td.throw1#tdthrow9
+                  input#throw9.scoretxt(name='throw9',type='text', value='', readonly='')
+                 td.throw1#tdthrow10
+                  input#throw10.scoretxt(name='throw10',type='text', value='', readonly='')
+                 td.throw1#tdthrow11
+                  input#throw11.scoretxt(name='throw11',type='text', value='', readonly='')
+                 td.throw1#tdthrow12
+                  input#throw12.scoretxt(name='throw12',type='text', value='', readonly='')
+                 td.throw1#tdthrow13
+                  input#throw13.scoretxt(name='throw13',type='text', value='', readonly='')
+                 td.throw1#tdthrow14
+                  input#throw14.scoretxt(name='throw14',type='text', value='', readonly='')
+                 td.throw1#tdthrow15
+                  input#throw15.scoretxt(name='throw15',type='text', value='', readonly='')
+                 td.throw1#tdthrow16
+                  input#throw16.scoretxt(name='throw16',type='text', value='', readonly='')
+                 td.throw1#tdthrow17
+                  input#throw17.scoretxt(name='throw17',type='text', value='', readonly='')
+                 td.throw1#tdthrow18
+                  input#throw18.scoretxt(name='throw18',type='text', value='', readonly='')
+                 td.throw1#tdthrow19
+                  input#throw19.scoretxt(name='throw19',type='text', value='', readonly='')
+                 td.throw1#tdthrow20
+                  input#throw20.scoretxt(name='throw20',type='text', value='', readonly='')
+                 td.throw1#tdthrow21
+                  input#throw21.scoretxt(name='throw21',type='text', value='', readonly='')
+                 td.total(colspan='3', rowspan='2')
+                  input#total.scoretotal(name='total', type='text', value='',  required)
+                tr
+                 td.throw(colspan='2')
+                  input#score1.scorethrow(name='score1',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score2.scorethrow(name='score2',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score3.scorethrow(name='score3',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score4.scorethrow(name='score4',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score5.scorethrow(name='score5',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score6.scorethrow(name='score6',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score7.scorethrow(name='score7',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score8.scorethrow(name='score8',type='text', value='', readonly='')
+                 td.throw(colspan='2')
+                  input#score9.scorethrow(name='score9',type='text', value='', readonly='')
+                 td.throw(colspan='3')
+                  input#score10.scorethrow(name='score10',type='text', value='', readonly='')
+  br          
+  .addButtons
+            button#btn-add-0.btnAdd(type='button',onclick='add(0)') 0
+            button#btn-add-1.btnAdd(type='button',onclick='add(1)') 1
+            button#btn-add-2.btnAdd(type='button',onclick='add(2)') 2
+            button#btn-add-3.btnAdd(type='button',onclick='add(3)') 3
+            button#btn-add-4.btnAdd(type='button',onclick='add(4)') 4
+            button#btn-add-5.btnAdd(type='button',onclick='add(5)') 5
+            button#btn-add-6.btnAdd(type='button',onclick='add(6)') 6
+            button#btn-add-7.btnAdd(type='button',onclick='add(7)') 7
+            button#btn-add-8.btnAdd(type='button',onclick='add(8)') 8
+            button#btn-add-9.btnAdd(type='button',onclick='add(9)') 9
+            button#btn-add-11.btnAdd(type='button',onclick="add('/')", disabled='') /
+            button#btn-add-10.btnAdd(type='button',onclick="add('X')") X
+            br
+            button#btn-backspace.btnAdd.btnErase(type='button',onclick='backspace()') bspc
+            button#btn-erase.btnAdd.btnErase(type='button',onclick='eraseAll()') del
+
+  input.lv-btn.nobg.lv-right(type='submit', name='register', value='ULOŽIT')
+  button.lv-btn.nobg.lv-left(onclick='home()') ZRUŠIT
