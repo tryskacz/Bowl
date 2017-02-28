@@ -13,58 +13,96 @@ function closeNav() {
 }
 
 function selectPlayer(playerId, e) {
-    if (!e) var e = window.event;
-    e.cancelBubble = true;
-    if (e.stopPropagation) e.stopPropagation();
 
     $("#" + playerId).addClass("selected")
     document.getElementById(playerId).onclick = function() {
         deselectPlayer(playerId);
     };
-}
 
-function deselectPlayer(playerId, e) {
     if (!e) var e = window.event;
     e.cancelBubble = true;
     if (e.stopPropagation) e.stopPropagation();
+
+}
+
+function deselectPlayer(playerId, e) {
     $("#" + playerId).removeClass("selected")
     document.getElementById(playerId).onclick = function() {
         selectPlayer(playerId);
     };
+
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+
 }
 
 function newPlayer() {
     window.location.href = '/newplayer'
-  }
+}
+
 function newScore() {
     window.location.href = '/newscore'
-  }
+}
+
 function home() {
     window.location.href = '/'
-  }
-function openEdit() {
-    document.getElementById("newplayer-overlay").className = "newplayeroverlay open";
 }
 
-function closeEdit() {
-    document.getElementById("newplayer-overlay").className = "newplayeroverlay";
+///////////////////////
+function selectBar(score, detailId) {
+    console.log(detailId);
+    $('#' + detailId.id + ' td.lv-throw-1').text(score.throw1);
+    $('#' + detailId.id + ' td.lv-throw-2').text(score.throw2);
+    $('#' + detailId.id + ' td.lv-throw-3').text(score.throw3);
+    $('#' + detailId.id + ' td.lv-throw-4').text(score.throw4);
+    $('#' + detailId.id + ' td.lv-throw-5').text(score.throw5);
+    $('#' + detailId.id + ' td.lv-throw-6').text(score.throw6);
+    $('#' + detailId.id + ' td.lv-throw-7').text(score.throw7);
+    $('#' + detailId.id + ' td.lv-throw-8').text(score.throw8);
+    $('#' + detailId.id + ' td.lv-throw-9').text(score.throw9);
+    $('#' + detailId.id + ' td.lv-throw-10').text(score.throw10);
+    $('#' + detailId.id + ' td.lv-throw-11').text(score.throw11);
+    $('#' + detailId.id + ' td.lv-throw-12').text(score.throw12);
+    $('#' + detailId.id + ' td.lv-throw-13').text(score.throw13);
+    $('#' + detailId.id + ' td.lv-throw-14').text(score.throw14);
+    $('#' + detailId.id + ' td.lv-throw-15').text(score.throw15);
+    $('#' + detailId.id + ' td.lv-throw-16').text(score.throw16);
+    $('#' + detailId.id + ' td.lv-throw-17').text(score.throw17);
+    $('#' + detailId.id + ' td.lv-throw-18').text(score.throw18);
+    $('#' + detailId.id + ' td.lv-throw-19').text(score.throw19);
+    $('#' + detailId.id + ' td.lv-throw-20').text(score.throw20);
+    $('#' + detailId.id + ' td.lv-throw-21').text(score.throw21);
+
+    $('#' + detailId.id + ' td.lv-score-1').text(score.score1);
+    $('#' + detailId.id + ' td.lv-score-2').text(score.score2);
+    $('#' + detailId.id + ' td.lv-score-3').text(score.score3);
+    $('#' + detailId.id + ' td.lv-score-4').text(score.score4);
+    $('#' + detailId.id + ' td.lv-score-5').text(score.score5);
+    $('#' + detailId.id + ' td.lv-score-6').text(score.score6);
+    $('#' + detailId.id + ' td.lv-score-7').text(score.score7);
+    $('#' + detailId.id + ' td.lv-score-8').text(score.score8);
+    $('#' + detailId.id + ' td.lv-score-9').text(score.score9);
+    $('#' + detailId.id + ' td.lv-score-10').text(score.score10);
+    $('#' + detailId.id + ' td.detailscore').text(score.score10);
 }
 
-function openNewPlayer() {
-    document.getElementById("newplayer-overlay").className = "newplayeroverlay open";
+
+function nothingToDo(e) {
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+}
+var lamalogin = 0;
+function lamacounter(){
+    lamalogin++;
+    if (lamalogin == 5) {
+        document.getElementById("newplayerbtn").style.visibility = "visible";
+        document.getElementById("newscorebtn").style.visibility = "visible";
+    }
 }
 
-function closeNewPlayer() {
-    document.getElementById("newplayer-overlay").className = "newplayeroverlay";
-}
 
-function openNewGame() {
-    document.getElementById("newgame-overlay").className = "newgameoverlay open";
-}
-
-function closeNewGame() {
-    document.getElementById("newgame-overlay").className = "newgameoverlay";
-}
 //score
 shot = [];
 score = [];
@@ -185,7 +223,7 @@ function store(number) {
         var throwId = 'throw' + shot.length;
         var tdthrowid = 'td' + throwId;
         document.getElementById(throwId).value = number;
-        
+
         document.getElementById(tdthrowid).className = 'throw1 filled';
     }
 

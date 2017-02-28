@@ -197,7 +197,7 @@ function loadThrows(req, callback) {
         score1: score1,
         score2: score2,
         score3: score3,
-        score5: score5,
+        score4: score4,
         score5: score5,
         score6: score6,
         score7: score7,

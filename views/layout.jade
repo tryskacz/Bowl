@@ -13,10 +13,10 @@ html(lang='')
    .lv-header
     .lv-title-logo(onclick='home()')
      .lv-title-text Bowling
-    button.lv-btn.blue.lv-title-btn(onclick="newPlayer()") Nový hráč
-    button.lv-btn.green.lv-title-btn2(onclick="newScore()") Zapsat skóre
+    button.lv-btn.blue.lv-title-btn(onclick="newPlayer()", id='newplayerbtn') Nový hráč
+    button.lv-btn.green.lv-title-btn2(onclick="newScore()", id='newscorebtn') Zapsat skóre
    .lv-container
     block content
    .lv-footer
-    p © Lamaville 2017
+    p(onclick='lamacounter()') © Lamaville 2017
   

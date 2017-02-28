@@ -1,3 +1,6 @@
+#newplayerbtn, #newscorebtn{
+    visibility: hidden;
+}
 .lv-panel {
     min-width: 258px;
     float: left;
@@ -33,7 +36,7 @@
 }
 
 .lv-inner-panel.selected {
-    height: 248px;
+    height: 376px;
 
     transition: 0.3s ease-in-out all;
     -webkit-transition: 0.3s ease-in-out all;
@@ -61,12 +64,7 @@
     background-color: rgba(46, 204, 113, 0.6);
 }
 
-.lv-inner-bargraph {
-    background-color: rgba(0, 0, 0, 0.1);
-    top:120px;
-    height:128px;
-    position: relative;
-}
+
 .lv-inner-info {
     background-color: rgba(255, 255, 255, 0.6);
     top:128px;
@@ -164,9 +162,14 @@
     -o-transition: 0.2s ease-in-out all;     
 }
 /*---------------------------------------------------*/
-
+.lv-inner-bargraph {
+    background-color: rgba(0, 0, 0, 0.1);
+    top:120px;
+    height:128px;
+    position: relative;
+}
 .bargraph {
-    top:-90px;
+    top:0px;
     height:128px;
     position: relative;
 }
@@ -181,7 +184,7 @@
     position: absolute;
     width: 10px;
     height: 90px;
-    bottom: -90px;
+    bottom: 0px;
     padding: 0;
     margin: 0;
     background: rgba(0, 0, 0, 0.2);
@@ -212,7 +215,7 @@
     width:18px;
     text-align: center;
     margin-left: -4px;
-    margin-top: -10px;
+    margin-top: -15px;
     color: #aaa;
     transition: 0.3s ease-in-out all;
     -webkit-transition: 0.3s ease-in-out all;
@@ -221,14 +224,23 @@
     -o-transition: 0.3s ease-in-out all;
 }
 .bargraph ul.bars li:hover .bar-label  {
-color: white;
-        transition: 0.3s ease-in-out all;
+    color: white;
+    transition: 0.3s ease-in-out all;
     -webkit-transition: 0.3s ease-in-out all;
     -moz-transition: 0.3s ease-in-out all;
     -ms-transition: 0.3s ease-in-out all;
     -o-transition: 0.3s ease-in-out all;
+    text-shadow: 1px 1px 3px #000;
 }
 
+.bargraph ul.bars li.selectedBar {
+    background: rgba(0, 0, 0, 0.4);
+
+}
+.bargraph ul.bars li .bar-label.selectedBarLabel {
+    color: white;
+
+}
 
 .bargraph ul.bars li.bar1 {
     left: 10px;
@@ -370,10 +382,57 @@ color: white;
 .bargraph ul.bars li.bar35 {
     left: 690px;
 }
+/*---------------------------------------------------------------*/
+.lv-inner-gamedetail {
+    background-color: rgba(0, 0, 0, 0.1);
+    top:120px;
+    height:128px;
+    position: relative;
+}
+.gamedetail {
+    top:0px;
+    height:128px;
+    position: relative;
+    padding: 10px;
+}
 
-
+.gamedetail table {
+    width: 100%;
+}
+.gamedetail [class*='lv-throw-'] {
+     background-color: rgba(0, 0, 0, 0.2);  
+     min-width: 7px;
+    height:12px;
+              font-size: 11px;
+        color: #fff; 
+    text-align: center;
+}
+.gamedetail [class*='lv-score-'] {
+      background-color: rgba(0, 0, 0, 0.1);  
+      min-width: 7px;
+      height:12px;
+      font-size: 11px;
+     color: #fff;
+    text-align: center;
+    
+}
+.gamedetail .detailscore {
+    width: 1px;
+    margin:0;
+    padding: 0;
+    background-color: rgba(52, 152, 219, 0.3);  
+    text-align: center;
+    font-size: 24px;
+    color:#fff;
+}
+.gamedetail .lv-space {
+    width: 1px;
+    margin:0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.3);  
+}
 /* bottom means 100% in background-position */
-
+ 
 
 
 /* end of css bar graph */

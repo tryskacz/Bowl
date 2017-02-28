@@ -13,7 +13,7 @@ block content
        .boxes
         form(method='post', action='/')
          label(for='sortorder').lv-label-form Seřadit
-         .lv-radiobuttonbox#sortorder.no-hover
+         .lv-radiobuttonbox#sortorder.no-hover.rbdark
           if sortorder == 1
            input#sort1(type='radio', name='sortorder', checked='', value='1')
           if sortorder != 1
@@ -82,14 +82,18 @@ block content
            .lv-panel-subtitle3 Strike (X): #{player.strikes}
            .lv-panel-subtitle4 Nejlepší skóre: #{player.highscore}
           .lv-panel-image
-          .lv-inner-bargraph
+          .lv-inner-bargraph(onclick='nothingToDo()')
            .bargraph
             ul.bars
              - var i = 0
              each total in player.games.reverse()
               - i++ 
-              li(class='bar#{i}', style='height: #{total.graph}px;')
-               .bar-label #{total.total}
+              if i == 1
+               li(class='bar#{i} selectedBar', style='height: #{total.graph}px;', id='#{total.id}',onclick="selectBar(this)")
+                .bar-label.selectedBarLabel #{total.total}   
+              if i != 1
+               li(class='bar#{i}', style='height: #{total.graph}px;', id='#{total.id}',onclick="selectBar(this)")
+                .bar-label #{total.total}  
        else  
         .lv-panel
          div(class='lv-inner-panel blue' id='#{player.id}' onclick='selectPlayer(this.id)')
@@ -120,14 +124,66 @@ block content
            .lv-panel-subtitle3 Strike (X): #{player.strikes}
            .lv-panel-subtitle4 Nejlepší skóre: #{player.highscore}
           .lv-panel-image
-          .lv-inner-bargraph
+          .lv-inner-bargraph(onclick='nothingToDo()')
            .bargraph
             ul.bars
              - var i = 0
              each total in player.games.reverse()
-              - i++ 
-              li(class='bar#{i}', style='height: #{total.graph}px;')
-               .bar-label #{total.total}
+              - i++
+              - var stringtotal = JSON.stringify(total);
+              if i == 1
+               li(class='bar#{i}', style='height: #{total.graph}px;', onclick='selectBar(' + stringtotal + ','+ "detail"+ player.id +'  )')
+                .bar-label #{total.total}   
+              if i != 1
+               li(class='bar#{i}', style='height: #{total.graph}px;', onclick='selectBar(' + stringtotal + ','+ "detail"+ player.id +'  )')
+                .bar-label #{total.total} 
+          .lv-inner-gamedetail(onclick='nothingToDo()')
+           .gamedetail
+            table(id='detail' + player.id )
+             tr
+                td.lv-throw-1
+                td.lv-throw-2
+                td.lv-space(rowspan='2')
+                td.lv-throw-3
+                td.lv-throw-4
+                td.lv-space(rowspan='2')
+                td.lv-throw-5
+                td.lv-throw-6
+                td.lv-space(rowspan='2')
+                td.lv-throw-7
+                td.lv-throw-8
+                td.lv-space(rowspan='2')
+                td.lv-throw-9
+                td.lv-throw-10
+                td.lv-space(rowspan='2')
+                td.lv-throw-11
+                td.lv-throw-12
+                td.lv-space(rowspan='2')
+                td.lv-throw-13
+                td.lv-throw-14
+                td.lv-space(rowspan='2')
+                td.lv-throw-15
+                td.lv-throw-4
+                td.lv-space(rowspan='2')
+                td.lv-throw-16
+                td.lv-throw-17
+                td.lv-space(rowspan='2')
+                td.lv-throw-18
+                td.lv-throw-19
+                td.lv-throw-20
+             tr
+                td.lv-score-1(colspan='2')
+                td.lv-score-2(colspan='2')
+                td.lv-score-3(colspan='2')
+                td.lv-score-4(colspan='2')
+                td.lv-score-5(colspan='2')
+                td.lv-score-6(colspan='2')
+                td.lv-score-7(colspan='2')
+                td.lv-score-8(colspan='2')
+                td.lv-score-9(colspan='2')
+                td.lv-score-10(colspan='3')
+             tr
+                td.detailscore(colspan='30')
  script(src='/javascripts/jquery.js')
  script.
   $(document).ready(function(){
@@ -151,10 +207,7 @@ block content
   });
   });
  script.
-  function openNewPlayer() {
-  document.getElementById("newplayer-overlay").className = "newplayeroverlay open";
-  }
-  function closeNewPlayer() {
-  document.getElementById("newplayer-overlay").className = "newplayeroverlay";
-  }
-
+  $("li:not(.selectedBar)").click(function(){
+   $(this).addClass("selectedBar");
+   $(this).siblings().removeClass("selectedBar");
+  });
