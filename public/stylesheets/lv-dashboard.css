@@ -1,6 +1,8 @@
-#newplayerbtn, #newscorebtn{
+#newplayerbtn,
+#newscorebtn {
     visibility: hidden;
 }
+
 .lv-panel {
     min-width: 276px;
     float: left;
@@ -16,6 +18,8 @@
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .lv-inner-panel {
@@ -31,47 +35,95 @@
     z-index: 9;
 }
 
+
+/* ribbon */
+
+.lv-panel .corner-ribbon-member {
+    width: 150px;
+    position: absolute;
+    top: 22px;
+    right: -45px;
+    left: auto;
+    text-align: center;
+    line-height: 16px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #fff;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    background-color: rgba(46, 204, 113, 0.9);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.lv-panel .corner-ribbon-host {
+    width: 150px;
+    position: absolute;
+    top: 22px;
+    right: -45px;
+    left: auto;
+    text-align: center;
+    line-height: 16px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #fff;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    background-color: rgba(52, 152, 219, 0.9);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
 .lv-inner-panel:hover {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.7);
 }
 
 .lv-inner-panel.selected {
     height: 376px;
-
-    transition: 0.3s ease-in-out all;
-    -webkit-transition: 0.3s ease-in-out all;
-    -moz-transition: 0.3s ease-in-out all;
-    -ms-transition: 0.3s ease-in-out all;
-    -o-transition: 0.3s ease-in-out all;
+    transition: 0.6s ease-in-out all;
+    -webkit-transition: 0.6s ease-in-out all;
+    -moz-transition: 0.6s ease-in-out all;
+    -ms-transition: 0.6s ease-in-out all;
+    -o-transition: 0.6s ease-in-out all;
 }
 
 .lv-inner-panel.blue {
     background-color: rgba(52, 152, 219, 0.4);
 }
+
 .lv-inner-panel.blue.selected {
     background-color: rgba(52, 152, 219, 0.6);
 }
+
 .lv-inner-panel.red {
     background: rgba(231, 76, 60, 0.4);
 }
+
 .lv-inner-panel.red.selected {
     background: rgba(231, 76, 60, 0.6);
 }
+
 .lv-inner-panel.green {
     background-color: rgba(46, 204, 113, 0.4);
 }
+
 .lv-inner-panel.green.selected {
     background-color: rgba(46, 204, 113, 0.6);
 }
 
-
 .lv-inner-info {
     background-color: rgba(255, 255, 255, 0.6);
-    top:128px;
-    height:284px;
+    top: 128px;
+    height: 284px;
     position: relative;
+    cursor: default;
 }
+
+
 /*-----------------------*/
+
 .lv-panel-title {
     position: absolute;
     overflow: hidden;
@@ -85,8 +137,9 @@
     -webkit-transition: 0.2s ease-in-out all;
     -moz-transition: 0.2s ease-in-out all;
     -ms-transition: 0.2s ease-in-out all;
-    -o-transition: 0.2s ease-in-out all;     
+    -o-transition: 0.2s ease-in-out all;
 }
+
 .lv-panel-subtitle1 {
     position: absolute;
     overflow: hidden;
@@ -100,8 +153,9 @@
     -webkit-transition: 0.2s ease-in-out all;
     -moz-transition: 0.2s ease-in-out all;
     -ms-transition: 0.2s ease-in-out all;
-    -o-transition: 0.2s ease-in-out all;     
+    -o-transition: 0.2s ease-in-out all;
 }
+
 .lv-panel-subtitle2 {
     position: absolute;
     overflow: hidden;
@@ -115,8 +169,9 @@
     -webkit-transition: 0.2s ease-in-out all;
     -moz-transition: 0.2s ease-in-out all;
     -ms-transition: 0.2s ease-in-out all;
-    -o-transition: 0.2s ease-in-out all;     
+    -o-transition: 0.2s ease-in-out all;
 }
+
 .lv-panel-subtitle3 {
     position: absolute;
     overflow: hidden;
@@ -130,8 +185,9 @@
     -webkit-transition: 0.2s ease-in-out all;
     -moz-transition: 0.2s ease-in-out all;
     -ms-transition: 0.2s ease-in-out all;
-    -o-transition: 0.2s ease-in-out all;     
+    -o-transition: 0.2s ease-in-out all;
 }
+
 .lv-panel-subtitle4 {
     position: absolute;
     overflow: hidden;
@@ -145,8 +201,9 @@
     -webkit-transition: 0.2s ease-in-out all;
     -moz-transition: 0.2s ease-in-out all;
     -ms-transition: 0.2s ease-in-out all;
-    -o-transition: 0.2s ease-in-out all;     
+    -o-transition: 0.2s ease-in-out all;
 }
+
 .lv-panel-image {
     position: absolute;
     overflow: hidden;
@@ -159,19 +216,84 @@
     -webkit-transition: 0.2s ease-in-out all;
     -moz-transition: 0.2s ease-in-out all;
     -ms-transition: 0.2s ease-in-out all;
-    -o-transition: 0.2s ease-in-out all;     
+    -o-transition: 0.2s ease-in-out all;
+    /*    background-image: url('../ghost.png');
+    background-size: 104px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;*/
 }
+
+.lv-profile-photo {
+    width: inherit;
+}
+
+.lv-profile-photo-head {
+    margin: auto;
+    margin-top: 7px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.lv-profile-photo-halfbody {
+    margin: auto;
+    margin-top: 7px;
+    height: 30px;
+    width: 94px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
 /*---------------------------------------------------*/
+
 .lv-inner-bargraph {
     background-color: rgba(0, 0, 0, 0.1);
-    top:120px;
-    height:128px;
+    top: 120px;
+    height: 128px;
     position: relative;
+    cursor: default;
+    transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    /* IE 9 */
+    -webkit-transform: rotateX(180deg);
+    /* Safari and Chrome */
+    overflow-y: hidden;
+    overflow-x: auto;
 }
+
+.lv-inner-bargraph::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+}
+
+.lv-inner-bargraph::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+}
+
+.lv-inner-panel.blue .lv-inner-bargraph::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgba(52, 152, 219, 0.6);
+}
+
+.lv-inner-panel.red .lv-inner-bargraph::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgba(231, 76, 60, 0.6);
+}
+
 .bargraph {
-    top:0px;
-    height:128px;
+    top: 0px;
+    height: 128px;
     position: relative;
+    transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    /* IE 9 */
+    -webkit-transform: rotateX(180deg);
+    /* Safari and Chrome */
 }
 
 .bargraph ul.bars {
@@ -194,12 +316,12 @@
     font-family: "Open Sans";
     font-size: 10px;
     z-index: 10;
-     transition: 0.3s ease-in-out all;
+    transition: 0.3s ease-in-out all;
     -webkit-transition: 0.3s ease-in-out all;
     -moz-transition: 0.3s ease-in-out all;
     -ms-transition: 0.3s ease-in-out all;
-    -o-transition: 0.3s ease-in-out all;  
-    cursor:pointer;
+    -o-transition: 0.3s ease-in-out all;
+    cursor: pointer;
 }
 
 .bargraph ul.bars li:hover {
@@ -211,8 +333,9 @@
     -ms-transition: 0.3s ease-in-out all;
     -o-transition: 0.3s ease-in-out all;
 }
-.bar-label{
-    width:18px;
+
+.bar-label {
+    width: 18px;
     text-align: center;
     margin-left: -4px;
     margin-top: -15px;
@@ -223,7 +346,8 @@
     -ms-transition: 0.3s ease-in-out all;
     -o-transition: 0.3s ease-in-out all;
 }
-.bargraph ul.bars li:hover .bar-label  {
+
+.bargraph ul.bars li:hover .bar-label {
     color: white;
     transition: 0.3s ease-in-out all;
     -webkit-transition: 0.3s ease-in-out all;
@@ -235,14 +359,14 @@
 
 .bargraph ul.bars li.selectedBar {
     background: rgba(0, 0, 0, 0.4);
-
 }
+
 .bargraph ul.bars li .bar-label.selectedBarLabel {
     color: white;
-
 }
 
-.bargraph ul.bars li.bar1 {
+
+/*.bargraph ul.bars li.bar1 {
     left: 10px;
     z-index: 11;
 }
@@ -250,148 +374,23 @@
 .bargraph ul.bars li.bar2 {
     left: 30px;
 }
+vice v my.js 
+*/
 
-.bargraph ul.bars li.bar3 {
-    left: 50px;
-}
 
-.bargraph ul.bars li.bar4 {
-    left: 70px;
-}
-
-.bargraph ul.bars li.bar5 {
-    left: 90px;
-}
-
-.bargraph ul.bars li.bar6 {
-    left: 110px;
-}
-
-.bargraph ul.bars li.bar7 {
-    left: 130px;
-}
-
-.bargraph ul.bars li.bar8 {
-    left: 150px;
-}
-
-.bargraph ul.bars li.bar9 {
-    left: 170px;
-}
-
-.bargraph ul.bars li.bar10 {
-    left: 190px;
-}
-
-.bargraph ul.bars li.bar11 {
-    left: 210px;
-}
-
-.bargraph ul.bars li.bar12 {
-    left: 230px;
-}
-
-.bargraph ul.bars li.bar13 {
-    left: 250px;
-}
-
-.bargraph ul.bars li.bar14 {
-    left: 270px;
-}
-
-.bargraph ul.bars li.bar15 {
-    left: 290px;
-}
-
-.bargraph ul.bars li.bar16 {
-    left: 310px;
-}
-
-.bargraph ul.bars li.bar17 {
-    left: 330px;
-}
-
-.bargraph ul.bars li.bar18 {
-    left: 350px;
-}
-
-.bargraph ul.bars li.bar19 {
-    left: 370px;
-}
-
-.bargraph ul.bars li.bar20 {
-    left: 390px;
-}
-
-.bargraph ul.bars li.bar21 {
-    left: 410px;
-}
-
-.bargraph ul.bars li.bar22 {
-    left: 430px;
-}
-
-.bargraph ul.bars li.bar23 {
-    left: 450px;
-}
-
-.bargraph ul.bars li.bar24 {
-    left: 470px;
-}
-
-.bargraph ul.bars li.bar25 {
-    left: 490px;
-}
-
-.bargraph ul.bars li.bar26 {
-    left: 510px;
-}
-
-.bargraph ul.bars li.bar27 {
-    left: 530px;
-}
-
-.bargraph ul.bars li.bar28 {
-    left: 550px;
-}
-
-.bargraph ul.bars li.bar29 {
-    left: 570px;
-}
-
-.bargraph ul.bars li.bar30 {
-    left: 590px;
-}
-
-.bargraph ul.bars li.bar31 {
-    left: 610px;
-}
-
-.bargraph ul.bars li.bar32 {
-    left: 630px;
-}
-
-.bargraph ul.bars li.bar33 {
-    left: 650px;
-}
-
-.bargraph ul.bars li.bar34 {
-    left: 670px;
-}
-
-.bargraph ul.bars li.bar35 {
-    left: 690px;
-}
 /*---------------------------------------------------------------*/
+
 .lv-inner-gamedetail {
-    background-color: rgba(0, 0, 0, 0.1);
-    top:120px;
-    height:128px;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 120px;
+    height: 128px;
     position: relative;
+    cursor: default;
 }
+
 .gamedetail {
-    top:0px;
-    height:128px;
+    top: 0px;
+    height: 128px;
     position: relative;
     padding: 10px;
 }
@@ -399,40 +398,64 @@
 .gamedetail table {
     width: 100%;
 }
+
 .gamedetail [class*='lv-throw-'] {
-     background-color: rgba(0, 0, 0, 0.2);  
-     min-width: 7px;
-    height:12px;
-              font-size: 11px;
-        color: #fff; 
+    background-color: rgba(0, 0, 0, 0.2);
+    min-width: 7px;
+    height: 12px;
+    font-size: 11px;
+    color: #fff;
     text-align: center;
 }
+
 .gamedetail [class*='lv-score-'] {
-      background-color: rgba(0, 0, 0, 0.1);  
-      min-width: 7px;
-      height:12px;
-      font-size: 11px;
-     color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    min-width: 7px;
+    height: 12px;
+    font-size: 11px;
+    color: #fff;
     text-align: center;
-    
 }
+
 .gamedetail .detailscore {
-    width: 1px;
-    margin:0;
+    min-width: 1px;
+    margin: 0;
     padding: 0;
-    background-color: rgba(52, 152, 219, 0.3);  
+    background-color: rgba(52, 152, 219, 0.3);
     text-align: center;
     font-size: 24px;
-    color:#fff;
+    height: 26px;
+    color: #fff;
 }
+
+.gamedetail .detailscoref {
+    min-width: 1px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(231, 76, 60, 0.3);
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    height: 26px;
+}
+
 .gamedetail .lv-space {
     width: 1px;
-    margin:0;
+    margin: 0;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.3);  
+    background-color: rgba(0, 0, 0, 0.3);
 }
+
+.gamedetail .graphtitle {
+    color: #bbb;
+    font-size: 12px;
+    padding: 2px;
+    width: auto;
+    text-align: center;
+}
+
+
 /* bottom means 100% in background-position */
- 
 
 
 /* end of css bar graph */
@@ -443,8 +466,7 @@
 @media (max-width:668px) {
     .lv-panel {
         width: 100%;
-    }   
-    
+    }
 }
 
 @media (min-width:668px) {

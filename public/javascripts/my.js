@@ -14,7 +14,8 @@ function closeNav() {
 
 function selectPlayer(playerId, e) {
 
-    $("#" + playerId).addClass("selected")
+    $("#" + playerId).addClass("selected");
+    barsSelPos();
     document.getElementById(playerId).onclick = function() {
         deselectPlayer(playerId);
     };
@@ -26,7 +27,7 @@ function selectPlayer(playerId, e) {
 }
 
 function deselectPlayer(playerId, e) {
-    $("#" + playerId).removeClass("selected")
+    $("#" + playerId).removeClass("selected");
     document.getElementById(playerId).onclick = function() {
         selectPlayer(playerId);
     };
@@ -36,6 +37,20 @@ function deselectPlayer(playerId, e) {
     if (e.stopPropagation) e.stopPropagation();
 
 }
+
+function barsSelPos() {
+    var b;
+    var pos = 10;
+    for (b = 1; b < 100; b++) {
+        $('.bar' + b).css({'left': pos});
+        pos+=20;
+    }
+}
+
+function barsOffPos() {
+    
+}
+
 
 function newPlayer() {
     window.location.href = '/newplayer'
@@ -51,7 +66,7 @@ function home() {
 
 ///////////////////////
 function selectBar(score, detailId) {
-    console.log(detailId);
+
     $('#' + detailId.id + ' td.lv-throw-1').text(score.throw1);
     $('#' + detailId.id + ' td.lv-throw-2').text(score.throw2);
     $('#' + detailId.id + ' td.lv-throw-3').text(score.throw3);
@@ -85,6 +100,7 @@ function selectBar(score, detailId) {
     $('#' + detailId.id + ' td.lv-score-9').text(score.score9);
     $('#' + detailId.id + ' td.lv-score-10').text(score.score10);
     $('#' + detailId.id + ' td.detailscore').text(score.score10);
+    $('#' + detailId.id + ' td.detailscoref').text(score.score10);
 }
 
 
@@ -96,7 +112,7 @@ function nothingToDo(e) {
 var lamalogin = 0;
 function lamacounter(){
     lamalogin++;
-    if (lamalogin == 5) {
+    if (lamalogin == 10) {
         document.getElementById("newplayerbtn").style.visibility = "visible";
         document.getElementById("newscorebtn").style.visibility = "visible";
     }
@@ -118,12 +134,10 @@ function buttons() {
     //pri prvnim ze dvou zneviditelnit X a pocet ktery uz nejde shodit
     var x = shot.length;
     if (x & 1 || x == 20) {
-        console.log(x);
         //urcite dat pryc X (osetrit desate kolo, kde mohou byt 3 X)
         if (shot[shot.length - 1] != 'X') document.getElementById('btn-add-10').disabled = true;
         if (shot[19] == '/') document.getElementById('btn-add-10').disabled = false;
         var lastThrow = (10 - shot[shot.length - 1]);
-        console.log(lastThrow);
         for (b = lastThrow; b < 10; b++) {
             var btnId = 'btn-add-' + b;
             document.getElementById(btnId).disabled = true;
@@ -138,7 +152,6 @@ function buttons() {
     if (score[9]) {
         for (b = 0; b < 12; b++) {
             var btnId = 'btn-add-' + b;
-            console.log(btnId);
             document.getElementById(btnId).disabled = true;
         }
     }
